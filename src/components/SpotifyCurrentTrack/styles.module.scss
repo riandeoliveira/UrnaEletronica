@@ -1,0 +1,31 @@
+@use "../../styles" as *;
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title_box {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.iframe {
+  height: 100px;
+  pointer-events: none;
+  width: 100%;
+}
+
+@include media-query($tablet-s) {
+  .title {
+    font-size: 18px;
+  }
+}

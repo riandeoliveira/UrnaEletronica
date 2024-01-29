@@ -1,0 +1,46 @@
+@use "../../styles" as *;
+
+.section {
+  background-color: $darkest-purple;
+  border-radius: 20px;
+  height: 600px;
+  overflow: auto;
+  padding: 32px;
+}
+
+.section_box {
+  animation: $fade-in;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  height: 100%;
+}
+
+.title_box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: fit-content;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.bar {
+  @include animated-background-component;
+
+  border-radius: 100px;
+  height: 1px;
+}
+
+@include media-query($tablet-s) {
+  .section {
+    padding: 16px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+}

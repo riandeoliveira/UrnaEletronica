@@ -1,0 +1,21 @@
+@use "../../styles" as *;
+
+.section {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 32px;
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  max-width: 600px;
+  width: 100%;
+}
+
+@include media-query($tablet-s) {
+  .skills {
+    gap: 48px;
+  }
+}

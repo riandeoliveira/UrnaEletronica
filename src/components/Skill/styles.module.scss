@@ -1,0 +1,45 @@
+@use "../../styles" as *;
+
+.box {
+  display: flex;
+}
+
+.skill_box {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.skill {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.icon {
+  align-items: center;
+  background-color: $dark-purple;
+  border-radius: 100px;
+  box-shadow: 0 0 48px $dark-purple;
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  width: 80px;
+}
+
+.title {
+  font-size: 18px;
+  text-align: center;
+}
+
+@include media-query($tablet-s) {
+  .icon {
+    scale: 0.8;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+}

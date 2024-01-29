@@ -1,18 +1,77 @@
-$fade-pulse: strong-pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-$fast-pulse: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+$fade-in: fade-in-animation 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+$gradient: gradient-animation 15s ease infinite;
+$pulse: pulse-animation 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+$rotate-primary-avatar: rotate-primary-avatar-animation 2s forwards;
+$rotate-secondary-avatar: rotate-secondary-avatar-animation 2s forwards;
+$toggle-primary-avatar: toggle-primary-avatar-animation 2s forwards;
+$toggle-secondary-avatar: toggle-secondary-avatar-animation 2s forwards;
 
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
+@keyframes fade-in-animation {
+  from {
+    opacity: 0;
   }
 
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse-animation {
   50% {
     opacity: 0.5;
   }
 }
 
-@keyframes strong-pulse {
-  50% {
-    opacity: 0.1;
+@keyframes rotate-primary-avatar-animation {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(180deg);
+  }
+}
+
+@keyframes rotate-secondary-avatar-animation {
+  from {
+    transform: rotateY(180deg);
+  }
+
+  to {
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes toggle-primary-avatar-animation {
+  from {
+    z-index: 1;
+  }
+
+  to {
+    z-index: 0;
+  }
+}
+
+@keyframes toggle-secondary-avatar-animation {
+  from {
+    z-index: 0;
+  }
+
+  to {
+    z-index: 1;
   }
 }

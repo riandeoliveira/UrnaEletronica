@@ -1,24 +1,57 @@
-@use "../../styles/" as *;
+@use "../../styles" as *;
 
-.home_page {
+.page {
   display: flex;
-  align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  background-color: #27272a;
 }
 
-.panel {
+.page_box {
+  @include animated-background-component;
+
+  border-radius: 20px;
+  box-shadow: 0 0 36px $purple;
   display: flex;
   flex-direction: column;
-  gap: 80px;
-  position: absolute;
-  transform: translate(-3px, -60px);
+  gap: 4px;
+  margin: 32px 16px;
+  padding: 4px;
+  width: 1200px;
 }
 
-.controls {
+.list {
+  background-color: $darkest-purple;
+  border-radius: 20px;
   display: flex;
-  gap: 15px;
-  align-items: end;
   justify-content: center;
+
+  & li:first-of-type button {
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+  }
+
+  & li:last-of-type button {
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+}
+
+@include media-query($mobile-l) {
+  .page_box {
+    gap: 8px;
+  }
+
+  .list {
+    flex-direction: column;
+
+    & li:first-of-type button {
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 20px;
+    }
+
+    & li:last-of-type button {
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      border-top-right-radius: 0;
+    }
+  }
 }

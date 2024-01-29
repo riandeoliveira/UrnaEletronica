@@ -1,44 +1,14 @@
 @use "../../styles" as *;
 
-.footer_area {
-  position: absolute;
-  transform: translateY(237px);
-  width: 88%;
-  border-top: 2px solid #000;
-  line-height: 16px !important;
-  padding-top: 4px;
-}
-
 .footer {
-  font-size: 13px;
-  display: flex;
-  flex-direction: column;
+  background-color: $darkest-purple;
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
 }
 
-.label {
-  position: absolute;
-  font-size: 28px;
-  animation: $fast-pulse;
-  transform: translate(114px, 14px);
-  font-family: $screen-font, $default-font;
-
-  &[data-position="true"] {
-    transform: translate(20px, 14px);
+@include media-query($tablet-s) {
+  .content {
+    font-size: 14px;
   }
-}
-
-
-.first_label {
-  padding-left: 6px;
-  font-family: $screen-font, $default-font;
-}
-
-.second_label {
-  padding-left: 22px;
-  font-family: $screen-font, $default-font;
-}
-
-.third_label {
-  padding-left: 32px;
-  font-family: $screen-font, $default-font;
 }

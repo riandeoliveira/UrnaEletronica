@@ -1,0 +1,54 @@
+@use "../../styles" as *;
+
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.title_box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: fit-content;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.bar {
+  @include animated-background-component;
+
+  border-radius: 100px;
+  height: 1px;
+}
+
+.subtitle_box {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: fit-content;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+}
+
+@include media-query($tablet-s) {
+  .box {
+    align-items: center;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+}

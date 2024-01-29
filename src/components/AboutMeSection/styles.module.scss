@@ -1,0 +1,78 @@
+@use "../../styles" as *;
+
+.section_box {
+  display: flex;
+  gap: 32px;
+  justify-content: space-between;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.description {
+  flex: 2;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: justify;
+  text-indent: 32px;
+}
+
+.download_button {
+  @include focus("large", $cyan, "light");
+
+  background-color: $purple;
+  border: 0.5px solid transparent;
+  border-radius: 16px;
+  box-shadow: 0 0 48px $dark-purple;
+  cursor: pointer;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  padding: 10px;
+  width: 200px;
+
+  &:hover {
+    background-color: transparent;
+    border-color: $purple;
+  }
+}
+
+.image {
+  border-radius: 10px;
+  box-shadow: 0 0 48px $dark-purple;
+  flex: 1;
+  width: 100%;
+}
+
+@include media-query($laptop-s) {
+  .section_box {
+    flex-direction: column-reverse;
+  }
+
+  .box {
+    padding-bottom: 32px;
+  }
+
+  .image {
+    margin: auto;
+  }
+}
+
+@include media-query($tablet-s) {
+  .box {
+    padding-bottom: 16px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .download_button {
+    font-size: 14px;
+    margin: auto;
+    padding: 8px;
+  }
+}

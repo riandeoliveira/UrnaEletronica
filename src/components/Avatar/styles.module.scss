@@ -1,0 +1,64 @@
+@use "../../styles" as *;
+
+.box {
+  @include focus("large", $cyan, "light");
+
+  align-items: center;
+  background-color: transparent;
+  border-radius: 100px;
+  cursor: pointer;
+  display: flex;
+  gap: 40px;
+
+  &[data-rotating="true"] {
+    animation: $rotate-primary-avatar;
+  }
+
+  &[data-rotating="false"] {
+    animation: $rotate-secondary-avatar;
+  }
+}
+
+.avatar {
+  height: 128px;
+  position: absolute;
+  transition: all 0.15s ease;
+  width: 128px;
+
+  &>rect {
+    height: inherit;
+    position: inherit;
+    width: inherit;
+  }
+}
+
+.secondary_avatar {
+  @extend .avatar;
+
+  &[data-rotating="true"] {
+    animation: $toggle-secondary-avatar;
+  }
+
+  &[data-rotating="false"] {
+    animation: $toggle-primary-avatar;
+  }
+}
+
+.primary_avatar {
+  @extend .avatar;
+}
+
+.avatar_background {
+  animation: $pulse;
+  border-radius: 100px;
+  box-shadow: 0 0 48px $pink;
+  height: 128px;
+  transition: all 0.15s ease;
+  width: 128px;
+}
+
+@include media-query($tablet-s) {
+  .box {
+    justify-content: center;
+  }
+}
